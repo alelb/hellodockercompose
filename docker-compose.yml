@@ -15,6 +15,7 @@ services:
           - ./nginx.conf:/etc/nginx/nginx.conf:ro
           # connect host's ./nginx.conf with container's nginx.conf
           # :ro == read only perms in container
+          - './certs:/etc/nginx/certs:ro' 
       links:
           - go:app # [other container]:[alias in this container]
             # creates environment variables in proxy container
